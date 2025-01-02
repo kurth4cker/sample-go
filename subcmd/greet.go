@@ -5,18 +5,33 @@ package subcmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/spf13/cobra"
+)
+
+var (
+	User  bool
+	World bool
 )
 
 var greetCmd = &cobra.Command{
 	Use:   "greet",
 	Short: "greet user",
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("hello world")
-	},
+	Run:   Greet,
+}
+
+func Greet(cmd *cobra.Command, args []string) {
+	if User {
+		fmt.Printf("hello %v\n", os.Getenv("USER"))
+	}
+	if !User || World {
+		fmt.Printf("hello world\n")
+	}
 }
 
 func init() {
 	rootCmd.AddCommand(greetCmd)
+	greetCmd.Flags().BoolVarP(&User, "user", "u", false, "greet current user")
+	greetCmd.Flags().BoolVarP(&World, "world", "w", false, "greet current user")
 }

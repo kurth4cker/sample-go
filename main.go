@@ -3,7 +3,7 @@
 
 package main
 
-import "kurth4cker/sample/subcmd"
+import "git.sr.ht/~kurth4cker/sample-go/subcmd"
 
 func main() {
 	subcmd.Execute()

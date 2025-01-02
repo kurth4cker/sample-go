@@ -1,4 +1,4 @@
-module kurth4cker/sample
+module git.sr.ht/~kurth4cker/sample-go
 
 go 1.23
 
