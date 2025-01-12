@@ -4,11 +4,16 @@
 package main
 
 import (
-	"fmt"
+	"testing"
 
 	"codeberg.org/kurth4cker/go-sample"
 )
 
-func main() {
-	fmt.Println(sample.Greet("world"))
+func TestGreet(t *testing.T) {
+	want := "hello kurth4cker"
+	got := sample.Greet("kurth4cker")
+
+	if got != want {
+		t.Errorf("got %q, want %q", got, want)
+	}
 }
