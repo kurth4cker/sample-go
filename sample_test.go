@@ -11,13 +11,6 @@ import (
 )
 
 func TestGreet(t *testing.T) {
-	assertGotWant := func(t testing.TB, got, want string) {
-		t.Helper()
-		if got != want {
-			t.Errorf("got %q, want %q", got, want)
-		}
-	}
-
 	t.Run("greet anyone", func(t *testing.T) {
 		names := []string{
 			"world",
@@ -29,7 +22,10 @@ func TestGreet(t *testing.T) {
 			want := fmt.Sprintf("hello %s", name)
 			got := sample.Greet(name)
 
-			assertGotWant(t, got, want)
+			if got != want {
+				t.Errorf("got %q, want %q, given %q",
+					got, want, name)
+			}
 		}
 	})
 }
