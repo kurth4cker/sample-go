@@ -11,21 +11,19 @@ import (
 )
 
 func TestGreet(t *testing.T) {
-	t.Run("greet anyone", func(t *testing.T) {
-		names := []string{
-			"world",
-			"kurth4cker",
-			"kthzk",
-		}
+	names := []string{
+		"world",
+		"kurth4cker",
+		"kthzk",
+	}
 
-		for _, name := range names {
-			want := fmt.Sprintf("hello %s", name)
-			got := sample.Greet(name)
+	for _, name := range names {
+		want := fmt.Sprintf("hello %s", name)
+		got := sample.Greet(name)
 
-			if got != want {
-				t.Errorf("got %q, want %q, given %q",
-					got, want, name)
-			}
+		if got != want {
+			t.Errorf("got %q, want %q, given %q",
+				got, want, name)
 		}
-	})
+	}
 }
