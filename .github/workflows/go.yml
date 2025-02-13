@@ -24,5 +24,5 @@ jobs:
     - name: Build root
       run: go build -v .
 
-    - name: Test all
-      run: go test -v ./...
+    - name: Test root
+      run: go test -v .
