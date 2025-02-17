@@ -3,12 +3,8 @@
 
 package main
 
-import (
-	"fmt"
-
-	"codeberg.org/kurth4cker/go-sample"
-)
+import "codeberg.org/kurth4cker/go-sample"
 
 func main() {
-	fmt.Println(sample.Shello("world"))
+	sample.Helloln("world")
 }
