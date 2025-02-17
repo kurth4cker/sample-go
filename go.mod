@@ -3,7 +3,7 @@ module git.sr.ht/~kurth4cker/sample-go
 go 1.23
 
 require (
-	codeberg.org/kurth4cker/go-sample v0.5.0
+	codeberg.org/kurth4cker/go-sample v0.6.0
 	gioui.org v0.8.0
 )
 

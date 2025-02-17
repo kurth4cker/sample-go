@@ -4,26 +4,16 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 
 	"codeberg.org/kurth4cker/go-sample"
 )
 
-func TestGreet(t *testing.T) {
-	names := []string{
-		"world",
-		"kurth4cker",
-		"kthzk",
-	}
+func TestShello(t *testing.T) {
+	want := "hello world"
+	got := sample.Shello("world")
 
-	for _, name := range names {
-		want := fmt.Sprintf("hello %s", name)
-		got := sample.Greet(name)
-
-		if got != want {
-			t.Errorf("got %q, want %q, given %q",
-				got, want, name)
-		}
+	if got != want {
+		t.Errorf("got %q, want %q", got, want)
 	}
 }
