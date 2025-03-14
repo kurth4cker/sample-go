@@ -8,6 +8,7 @@ import (
 	"testing"
 
 	"codeberg.org/kurth4cker/go-sample"
+	"codeberg.org/kurth4cker/go-sample/assert"
 )
 
 func TestFhelloln(t *testing.T) {
@@ -17,16 +18,12 @@ func TestFhelloln(t *testing.T) {
 	want := "hello world\n"
 	got := buffer.String()
 
-	if got != want {
-		t.Errorf("got %q, want %q", got, want)
-	}
+	assert.Equal(t, got, want)
 }
 
 func TestShello(t *testing.T) {
 	want := "hello world"
 	got := sample.Shello("world")
 
-	if got != want {
-		t.Errorf("got %q, want %q", got, want)
-	}
+	assert.Equal(t, got, want)
 }
